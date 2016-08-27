@@ -10,21 +10,6 @@
 // Apply the java plugin to add support for Java
 apply plugin: "java"
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'me.trnl:github-release-gradle-plugin:0.1'
-    }
-}
-
-apply plugin: 'git'
-apply plugin: 'console'
-apply plugin: 'github'
-apply plugin: 'release'
-
-
 group = "io.faucette.example"
 version = "0.0.1"
 
@@ -51,18 +36,4 @@ dependencies {
     // testCompile dependency to testCompile "org.testng:testng:6.8.1" and add
     // "test.useTestNG()" to your build script.
     testCompile "junit:junit:4.12"
-}
-
-release {
-    /* Let's check that everything is committed */
-    doFirst {
-        if (!project.git.status().isEmpty()) {
-            throw new GradleException('You have uncommitted changes.')
-        }
-    }
-
-    /* Ask user for a release version, suggesting some default variant. */
-    version = { console.prompt(' > Please enter release version:', project.version - '-SNAPSHOT') }
-    tag = { "r$project.release.version" }
-    commitMessage = { "Release $project.release.version" }
 }
