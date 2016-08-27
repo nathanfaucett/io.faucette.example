@@ -19,8 +19,10 @@ buildscript {
     }
 }
 
-apply plugin: "release"
-apply plugin: "console"
+apply plugin: 'git'
+apply plugin: 'console'
+apply plugin: 'github'
+apply plguin: 'release'
 
 
 group = "io.faucette.example"
