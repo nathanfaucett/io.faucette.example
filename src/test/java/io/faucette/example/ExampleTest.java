@@ -7,6 +7,6 @@ import org.junit.*;
 
 public class ExampleTest {
     @Test public void testExample() {
-        assertEquals(true, true);
+        assertEquals(Example.add(1, 1), 2);
     }
 }
