@@ -22,7 +22,7 @@ buildscript {
 apply plugin: 'git'
 apply plugin: 'console'
 apply plugin: 'github'
-apply plguin: 'release'
+apply plugin: 'release'
 
 
 group = "io.faucette.example"
