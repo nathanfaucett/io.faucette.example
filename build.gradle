@@ -65,9 +65,4 @@ release {
     version = { console.prompt(' > Please enter release version:', project.version - '-SNAPSHOT') }
     tag = { "r$project.release.version" }
     commitMessage = { "Release $project.release.version" }
-
-    next {
-        version = { console.prompt(' > Please enter next version:', bumpVersion(project.release.version)) }
-        commitMessage = { "Bumping version to $project.release.next.version" }
-    }
 }
