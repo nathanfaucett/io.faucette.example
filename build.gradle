@@ -59,8 +59,6 @@ release {
         }
     }
 
-    /* Ask user for a release version, suggesting some default variant. */
-    version = { "r$project.release.version" }
     tag = { "r$project.release.version" }
     commitMessage = { "Release $project.release.version" }
 }
